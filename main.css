@@ -135,6 +135,7 @@ header article p {
     padding: var(--py);
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 .about article {
     flex: 0 0 48%;
@@ -169,6 +170,7 @@ header article p {
 .gallery .container {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
     margin-top: 100px;
 }
 .gallery .container div {
@@ -206,13 +208,17 @@ header article p {
 }
 .blog article {
     display: flex;
-    flex-wrap: wrap;
     justify-content: space-between;
-    margin-top: 100px;
+    flex-wrap: wrap;
+    margin-top: 70px;
 }
 .blog article .col {
     flex: 0 0 48%;
     display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 80px;
+    align-items: center;
 }
 .blog article img {
     width: 100%;
@@ -224,11 +230,169 @@ header article p {
     border: 5px solid var(--btn);
 }
 .blog article .col .text {
-    flex: 0 0 65%;
+    flex: 0 0 66%;
 }
-.blog article .col img {
+.blog article .col .img {
     flex: 0 0 30%;
 }
+.blog article .col:nth-child(even) .text {
+    order: 2;
+}
+.blog article .col:nth-child(even) .img{
+    order: 1;
+}
+.blog article .col:nth-child(odd) .text {
+    text-align: right;
+}
+.blog .text h3 {
+    text-transform: uppercase;
+    font-size: 1.5rem;
+}
+.blog .text h5 {
+    text-transform: uppercase;
+    font-size: 1rem;
+    color: var(--gray);
+    font-weight: 400;
+    padding-bottom: 20px;
+}
+.blog .text p {
+    font-size: 1.1rem;
+}
+
+/* cta */
+.cta {
+    background-image:linear-gradient(rgb(25, 51, 77, 0.7), rgb(25, 51, 77, 0.9)), url(img/cover.JPG);
+    padding: var(--py);
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    text-align: center;
+}
+.cta h2 {
+    color: var(--white)
+}
+.cta h4 {
+    color: var(--gray);
+    text-transform: uppercase;
+    font-weight: 400;
+    padding: 30px 0;
+    font-size: 1.4rem;
+}
+
+/* footer */
+footer{
+    text-align: center;
+    padding: var(--py);
+}
+footer i {
+    font-size: 2rem;
+    color: var(--btn);
+    margin: 0 30px;
+    transition: var(--transition);
+}
+footer i:hover {
+    color: var(--btnHover);
+}
+footer ul {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+footer ul li {
+    border-right: 1px solid var(--text);
+    padding: 0 20px;
+}
+footer ul li:last-child {
+    border: none;
+}
+
+/* responsive */
+@media(min-width: 767px) and (max-width: 960px){
+    .blog article .col {
+        flex: 0 0 90%;
+    }
+    .blog article .col .text,
+    .blog article .col .img {
+        flex: 0 0 48%;
+        margin: 20px 0;
+        align-items: center;
+    }
+}
+@media(max-width: 767px){
+    header {
+        height: 80vh;
+    }
+    header nav {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px 20px 0;
+        align-items: center;
+    }
+    header article h1 {
+        font-size: 3rem;
+    }
+    header ul li a {
+        margin: 20px;
+        font-size: 1rem;
+    }
+    header article p {
+        padding: 20px;
+        font-size: 1.4rem;
+    }
+    .about,
+    .container {
+        width: 90%;
+    }
+    .about article {
+        flex: 0 0 100%;
+        padding-bottom: 20px;
+    }
+    .gallery .container div {
+        flex: 0 0 100%;
+        margin-bottom: 50px;
+    }
+    .gallery .buttons button {
+        margin: 0 0 20px 0;
+    }
+    h2 {
+        font-size: 1.8rem;
+    }
+    .about h4,
+    .gallery h4,
+    .blog h4 {
+        font-size: 1.4rem;
+    }
+    .blog article,
+    .blog article .col,
+    .blog article .col .text,
+    .blog article .col .img {
+        flex: 0 0 100% ;
+    }
+    .blog article .col:nth-child(even) .text {
+        order: 1;
+    }
+    .blog article .col:nth-child(even) .img{
+        order: 2;
+    }
+    .blog article .col .text {
+        text-align: center;
+        margin: 0;
+        margin-bottom: 20px;
+    }
+    .blog article .col:nth-child(odd) .text {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    footer ul {
+        flex-direction: column;
+        margin: 20px;
+    }
+    footer ul li {
+        padding: 10px;
+        border: none;
+    }
+}
+
 
 
 
